@@ -808,6 +808,14 @@
     "color-dark-red": {
       "$type": "color",
       "$value": "#D12800"
+    },
+    "color-black": {
+      "$type": "color",
+      "$value": "#000"
+    },
+    "color-white": {
+      "$type": "color",
+      "$value": "#fff"
     }
   },
   "$themes": [],
