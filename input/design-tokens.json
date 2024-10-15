@@ -816,6 +816,18 @@
     "color-white": {
       "$type": "color",
       "$value": "#fff"
+    },
+    "color-light-yellow": {
+      "$type": "color",
+      "$value": "#ffe17e"
+    },
+    "color-yellow": {
+      "$type": "color",
+      "$value": "#ffeb00"
+    },
+    "color-dark-yellow": {
+      "$type": "color",
+      "$value": "#fbc412"
     }
   },
   "$themes": [],
