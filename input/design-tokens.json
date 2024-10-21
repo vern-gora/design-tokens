@@ -35,10 +35,6 @@
     "color-pink": {
       "$type": "color",
       "$value": "#ff00ea"
-    },
-    "color-green": {
-      "$type": "color",
-      "$value": "#1bff00"
     }
   },
   "$themes": [],
