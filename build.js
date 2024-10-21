@@ -1,22 +1,46 @@
-import StyleDictionaryPackage from 'style-dictionary';
+import StyleDictionary from 'style-dictionary'
 
-// Реєстрація формату SCSS змінних
-StyleDictionaryPackage.registerFormat({
-  name: 'scss/variables',
-  format: function (dictionary, config) {
-    return `${this.selector} {
-      ${dictionary.allProperties.map(prop => `  $${prop.name}: ${prop.value};`).join('\n')}
-    }`;
+const myStyleDictionary = new StyleDictionary()
+
+const config = await myStyleDictionary.extend({
+  "source": ["input/**/*.json"],
+  "platforms": {
+    "scss": {
+      "buildPath": "output/scss/",
+      "transformGroup": "scss",
+      "files": [
+        {
+          "format": "scss/variables",
+          "destination": "_variables.scss"
+        }
+      ]
+    }
   }
 });
 
+config.buildAllPlatforms();
+
+
+
+// import StyleDictionaryPackage from 'style-dictionary';
+
+// Реєстрація формату SCSS змінних
+// StyleDictionaryPackage.registerFormat({
+//   name: 'scss/variables',
+//   format: function (dictionary, config) {
+//     return `${this.selector} {
+//       ${dictionary.allProperties.map(prop => `  $${prop.name}: ${prop.value};`).join('\n')}
+//     }`;
+//   }
+// });
+
 // Функція для перетворення в kebab-case
-function kebabIt(str) {
-  return str
-    .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
-    .join('-')
-    .toLowerCase();
-}
+// function kebabIt(str) {
+//   return str
+//     .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
+//     .join('-')
+//     .toLowerCase();
+// }
 
 // // Функція для отримання базового розміру шрифту
 // function getBasePxFontSize(options) {
@@ -63,39 +87,39 @@ function kebabIt(str) {
 // });
 
 // Функція для отримання конфігурації Style Dictionary для тем
-function getStyleDictionaryConfig(theme) {
-  return {
-    "source": [
-      `input/${theme}.json`,
-    ],
-    "platforms": {
-      "web": {
-        "transforms": 
-          ["attribute/cti", "name/cti/kebab", "sizes/px", "size/pxToRem"],
-        "buildPath": `output/`,
-        "files": [{
-          "destination": `${theme}.scss`,
-          "format": "scss/variables",
-          "selector": `.${theme}-theme`
-        }]
-      }
-    }
-  };
-}
+// function getStyleDictionaryConfig(theme) {
+//   return {
+//     "source": [
+//       `input/${theme}.json`,
+//     ],
+//     "platforms": {
+//       "web": {
+//         "transforms": 
+//           ["attribute/cti", "name/cti/kebab", "sizes/px", "size/pxToRem"],
+//         "buildPath": `output/`,
+//         "files": [{
+//           "destination": `${theme}.scss`,
+//           "format": "scss/variables",
+//           "selector": `.${theme}-theme`
+//         }]
+//       }
+//     }
+//   };
+// }
 
-console.log('Build started...');
+// console.log('Build started...');
 
 // Обробка тем 'design-tokens' і 'colors-tokens'
-['design-tokens', 'colors-tokens'].map(function (theme) {
-  console.log('\n==============================================');
-  console.log(`\nProcessing: [${theme}]`);
+// ['design-tokens', 'colors-tokens'].map(function (theme) {
+//   console.log('\n==============================================');
+//   console.log(`\nProcessing: [${theme}]`);
 
-  const StyleDictionary = new StyleDictionaryPackage(getStyleDictionaryConfig(theme));
+//   const StyleDictionary = new StyleDictionaryPackage(getStyleDictionaryConfig(theme));
 
-  StyleDictionary.buildPlatform('web');
+//   StyleDictionary.buildPlatform('web');
 
-  console.log('\nEnd processing');
-});
+//   console.log('\nEnd processing');
+// });
 
-console.log('\n==============================================');
-console.log('\nBuild completed!');
+// console.log('\n==============================================');
+// console.log('\nBuild completed!');
