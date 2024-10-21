@@ -39,10 +39,6 @@
     "color-green": {
       "$type": "color",
       "$value": "#1fff00"
-    },
-    "color-blue": {
-      "$type": "color",
-      "$value": "#0021ff"
     }
   },
   "$themes": [],
