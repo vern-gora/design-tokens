@@ -24,7 +24,6 @@ config.buildAllPlatforms();
 
 // import StyleDictionaryPackage from 'style-dictionary';
 
-// Реєстрація формату SCSS змінних
 // StyleDictionaryPackage.registerFormat({
 //   name: 'scss/variables',
 //   format: function (dictionary, config) {
@@ -34,7 +33,6 @@ config.buildAllPlatforms();
 //   }
 // });
 
-// Функція для перетворення в kebab-case
 // function kebabIt(str) {
 //   return str
 //     .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
@@ -42,12 +40,10 @@ config.buildAllPlatforms();
 //     .toLowerCase();
 // }
 
-// // Функція для отримання базового розміру шрифту
 // function getBasePxFontSize(options) {
 //   return (options && options.basePxFontSize) || 16;
 // }
 
-// // Перетворення значень px у rem
 // function fontPxToRem(token, options) {
 //   const baseFont = getBasePxFontSize(options);
 //   const floatVal = parseFloat(token.value);
@@ -64,7 +60,6 @@ config.buildAllPlatforms();
 // 	return fontPxToRem(token, options)
 // }
 
-// // Реєстрація трансформу для перетворення px у rem
 // StyleDictionaryPackage.registerTransform({
 //   name: 'size/pxToRem',
 //   type: 'value',
@@ -76,7 +71,6 @@ config.buildAllPlatforms();
 // 	return parseFloat(prop.original.value) + 'px';
 // }
 
-// // Реєстрація трансформу для додавання одиниці 'px'
 // StyleDictionaryPackage.registerTransform({
 //   name: 'sizes/px',
 //   type: 'value',
@@ -86,7 +80,6 @@ config.buildAllPlatforms();
 //   transformer: myTransformFunctionPx
 // });
 
-// Функція для отримання конфігурації Style Dictionary для тем
 // function getStyleDictionaryConfig(theme) {
 //   return {
 //     "source": [
