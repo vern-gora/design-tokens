@@ -99,6 +99,16 @@
       "type": "other"
     }
   },
+  "add blue": {
+    "$type": {
+      "value": "color",
+      "type": "other"
+    },
+    "$value": {
+      "value": "#0065ff",
+      "type": "other"
+    }
+  },
   "tokenSetOrder": {
     "0": {
       "value": "colors-tokens",
