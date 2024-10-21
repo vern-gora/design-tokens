@@ -102,7 +102,6 @@ config.buildAllPlatforms();
 
 // console.log('Build started...');
 
-// Обробка тем 'design-tokens' і 'colors-tokens'
 // ['design-tokens', 'colors-tokens'].map(function (theme) {
 //   console.log('\n==============================================');
 //   console.log(`\nProcessing: [${theme}]`);
